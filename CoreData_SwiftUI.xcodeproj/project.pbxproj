@@ -13,8 +13,6 @@
 		2A88D3D725E73C8700AE726C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88D3D625E73C8700AE726C /* Preview Assets.xcassets */; };
 		2A88D3D925E73C8700AE726C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3D825E73C8700AE726C /* Persistence.swift */; };
 		2A88D3DC25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3DA25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld */; };
-		2A88D3E625E73E6900AE726C /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3E425E73E6900AE726C /* UserInfo+CoreDataClass.swift */; };
-		2A88D3E725E73E6900AE726C /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3E525E73E6900AE726C /* UserInfo+CoreDataProperties.swift */; };
 		2A88D3EA25E7410100AE726C /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3E925E7410100AE726C /* UserInfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +25,6 @@
 		2A88D3D825E73C8700AE726C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2A88D3DB25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		2A88D3DD25E73C8700AE726C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A88D3E425E73E6900AE726C /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2A88D3E525E73E6900AE726C /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A88D3E925E7410100AE726C /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,8 +58,6 @@
 		2A88D3CE25E73C8400AE726C /* CoreData_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				2A88D3E425E73E6900AE726C /* UserInfo+CoreDataClass.swift */,
-				2A88D3E525E73E6900AE726C /* UserInfo+CoreDataProperties.swift */,
 				2A88D3CF25E73C8400AE726C /* CoreData_SwiftUIApp.swift */,
 				2A88D3D125E73C8400AE726C /* ContentView.swift */,
 				2A88D3D325E73C8700AE726C /* Assets.xcassets */,
@@ -153,10 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A88D3E725E73E6900AE726C /* UserInfo+CoreDataProperties.swift in Sources */,
 				2A88D3EA25E7410100AE726C /* UserInfoView.swift in Sources */,
 				2A88D3D925E73C8700AE726C /* Persistence.swift in Sources */,
-				2A88D3E625E73E6900AE726C /* UserInfo+CoreDataClass.swift in Sources */,
 				2A88D3D225E73C8400AE726C /* ContentView.swift in Sources */,
 				2A88D3DC25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld in Sources */,
 				2A88D3D025E73C8400AE726C /* CoreData_SwiftUIApp.swift in Sources */,
