@@ -20,9 +20,14 @@ struct UserListView: View {
         List {
           //Text("Core Data")
           ForEach(users, id: \.self) { userInfo in
-            VStack(alignment: .leading) {
-              Text("\(userInfo.firstName ?? "") \(userInfo.lastName ?? "")")
-                .font(.title)
+            NavigationLink{
+              //EditUserView(userInfo: userInfo)
+              Text("\(userInfo.firstName ?? "Joe") \(userInfo.lastName ?? "")")
+            } label: {
+              VStack(alignment: .leading) {
+                Text("\(userInfo.firstName ?? "") \(userInfo.lastName ?? "")")
+                  .font(.title)
+              }
             }
           }
           .onDelete(perform: deleteUser(at:))
