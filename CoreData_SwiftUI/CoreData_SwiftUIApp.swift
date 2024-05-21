@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct CoreData_SwiftUIApp: App {
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            UserListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
+  
+  var body: some Scene {
+    WindowGroup {
+      UserListView()
     }
+    .modelContainer(for: [UserInfo.self])
+  }
 }
