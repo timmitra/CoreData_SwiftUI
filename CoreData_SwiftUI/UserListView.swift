@@ -6,22 +6,22 @@
 //
 
 import SwiftUI
-import CoreData
+//1
+import SwiftData
 
 struct UserListView: View {
-    @Environment(\.managedObjectContext) private var moc
-
-  @FetchRequest(sortDescriptors: []) var users: FetchedResults<UserInfo>
+  // 2
+  @Environment(\.managedObjectContext) private var modelContext
+  // 3
+  @Query(sort: \UserInfo.firstName, order: .forward) var users: [UserInfo]
   
   @State private var showingAddUser = false
 
     var body: some View {
       NavigationView{
         List {
-          //Text("Core Data")
-          ForEach(users, id: \.self) { userInfo in
+          ForEach(users) { userInfo in
             NavigationLink{
-              //EditUserView(userInfo: userInfo)
               Text("\(userInfo.firstName ?? "Joe") \(userInfo.lastName ?? "")")
             } label: {
               VStack(alignment: .leading) {
@@ -30,7 +30,7 @@ struct UserListView: View {
               }
             }
           }
-          .onDelete(perform: deleteUser(at:))
+          .onDelete(perform: deleteUser)
           if users.count == 0 {
             Text("No user found")
           }
@@ -40,23 +40,23 @@ struct UserListView: View {
           self.showingAddUser.toggle()
        })
         .sheet(isPresented: $showingAddUser) {
-          UserInfoView().environment(\.managedObjectContext, self.moc)
+          UserInfoView().environment(\.managedObjectContext, self.modelContext)
         }
 
       }
     }
   
-  func deleteUser(at offsets: IndexSet) {
-      for index in offsets {
-          let user = users[index]
-          moc.delete(user)
-      }
-      try? moc.save()
+  func deleteUser(indexSet: IndexSet) {
+    for index in indexSet {
+  //    modelContext.delete(users[index])
+    }
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-      UserListView().environment(\.managedObjectContext, UserContainer(forPreview: true).container.viewContext)
+      UserListView()
+        // 4 & 5 - add mock Data
+        .modelContainer(UserInfo.preview)
     }
 }
