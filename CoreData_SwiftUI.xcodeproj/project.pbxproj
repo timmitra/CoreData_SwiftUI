@@ -12,8 +12,8 @@
 		2A88D3D425E73C8700AE726C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88D3D325E73C8700AE726C /* Assets.xcassets */; };
 		2A88D3D725E73C8700AE726C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88D3D625E73C8700AE726C /* Preview Assets.xcassets */; };
 		2A88D3D925E73C8700AE726C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3D825E73C8700AE726C /* Persistence.swift */; };
-		2A88D3DC25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3DA25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld */; };
 		2A88D3EA25E7410100AE726C /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88D3E925E7410100AE726C /* UserInfoView.swift */; };
+		2AC650B72BFD1E8C004F0213 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC650B62BFD1E8C004F0213 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +23,9 @@
 		2A88D3D325E73C8700AE726C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A88D3D625E73C8700AE726C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A88D3D825E73C8700AE726C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		2A88D3DB25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		2A88D3DD25E73C8700AE726C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A88D3E925E7410100AE726C /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		2AC650B62BFD1E8C004F0213 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +58,12 @@
 		2A88D3CE25E73C8400AE726C /* CoreData_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				2AC650B82BFD1E98004F0213 /* Model */,
 				2A88D3CF25E73C8400AE726C /* CoreData_SwiftUIApp.swift */,
 				2A88D3D125E73C8400AE726C /* UserListView.swift */,
 				2A88D3D325E73C8700AE726C /* Assets.xcassets */,
 				2A88D3D825E73C8700AE726C /* Persistence.swift */,
 				2A88D3DD25E73C8700AE726C /* Info.plist */,
-				2A88D3DA25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld */,
 				2A88D3D525E73C8700AE726C /* Preview Content */,
 				2A88D3E925E7410100AE726C /* UserInfoView.swift */,
 			);
@@ -76,6 +76,14 @@
 				2A88D3D625E73C8700AE726C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2AC650B82BFD1E98004F0213 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AC650B62BFD1E8C004F0213 /* UserInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +158,7 @@
 				2A88D3EA25E7410100AE726C /* UserInfoView.swift in Sources */,
 				2A88D3D925E73C8700AE726C /* Persistence.swift in Sources */,
 				2A88D3D225E73C8400AE726C /* UserListView.swift in Sources */,
-				2A88D3DC25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld in Sources */,
+				2AC650B72BFD1E8C004F0213 /* UserInfo.swift in Sources */,
 				2A88D3D025E73C8400AE726C /* CoreData_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +292,7 @@
 				DEVELOPMENT_TEAM = 476QK54UU2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoreData_SwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +314,7 @@
 				DEVELOPMENT_TEAM = 476QK54UU2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CoreData_SwiftUI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,19 +348,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2A88D3DA25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2A88D3DB25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodel */,
-			);
-			currentVersion = 2A88D3DB25E73C8700AE726C /* CoreData_SwiftUI.xcdatamodel */;
-			path = CoreData_SwiftUI.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2A88D3C425E73C8300AE726C /* Project object */;
 }
