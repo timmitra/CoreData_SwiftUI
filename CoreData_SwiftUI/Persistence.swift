@@ -51,5 +51,45 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+      
     }
+}
+
+class UserContainer {
+  let container: NSPersistentContainer
+   
+  init(forPreview: Bool = false) {
+    container = NSPersistentContainer(name: "CoreData_SwiftUI")
+    
+    if forPreview {
+      container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+    }
+    
+    container.loadPersistentStores { _, _ in }
+    
+    if forPreview {
+      addMockData(moc: container.viewContext)
+    }
+  }
+}
+
+extension UserContainer {
+  func addMockData(moc: NSManagedObjectContext) {
+    let user1 = UserInfo(context: moc)
+    user1.firstName = "Tim"
+    user1.lastName = "Mitra"
+    user1.gender = "Male"
+    
+    let user2 = UserInfo(context: moc)
+    user2.firstName = "Joe"
+    user2.lastName = "Smith"
+    user2.gender = "Male"
+    
+    let user3 = UserInfo(context: moc)
+    user3.firstName = "Jane"
+    user3.lastName = "Doe"
+    user3.gender = "Male"
+    
+    try? moc.save()
+  }
 }

@@ -8,14 +8,10 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct UserListView: View {
     @Environment(\.managedObjectContext) private var moc
 
-  @FetchRequest(entity: UserInfo.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \UserInfo.firstName, ascending: true)],
-        animation: .default)
-  
-  private var users: FetchedResults<UserInfo>
+  @FetchRequest(sortDescriptors: []) var users: FetchedResults<UserInfo>
   
   @State private var showingAddUser = false
 
@@ -52,12 +48,10 @@ struct ContentView: View {
       }
       try? moc.save()
   }
-
-
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+      UserListView().environment(\.managedObjectContext, UserContainer(forPreview: true).container.viewContext)
     }
 }

@@ -13,7 +13,7 @@ struct CoreData_SwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
