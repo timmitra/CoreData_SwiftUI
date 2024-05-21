@@ -22,3 +22,20 @@ public class UserInfo {
     self.lastName = lastName
   }
 }
+
+extension UserInfo {
+  @MainActor
+  static var preview: ModelContainer {
+    let container = try! ModelContainer(for: UserInfo.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+    
+    let user1 = UserInfo(firstName: "Tim", lastName: "Mitra", gender: "Male")
+    let user2 = UserInfo(firstName: "Joe", lastName: "Smith", gender: "Male")
+    let user3 = UserInfo(firstName: "Jane", lastName: "Doe", gender: "Male")
+                         
+    container.mainContext.insert(user1)
+    container.mainContext.insert(user2)
+    container.mainContext.insert(user3)
+    
+    return container
+  }
+}
