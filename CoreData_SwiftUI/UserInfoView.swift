@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserInfoView: View {
-  @Environment(\.managedObjectContext) private var moc
+  @Environment(\.modelContext) private var modelContext
   @Environment(\.dismiss) private var dismiss
   @State private var firstName = ""
   @State private var lastName = ""
@@ -41,19 +41,8 @@ struct UserInfoView: View {
   
   private func addItem() {
       withAnimation {
-          let newItem = UserInfo(context: moc)
-        newItem.firstName = firstName
-        newItem.lastName = lastName
-        newItem.gender = gender
-          do {
-              try moc.save()
-              dismiss()
-          } catch {
-              // Replace this implementation with code to handle the error appropriately.
-              // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-              let nsError = error as NSError
-              fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-          }
+        let newUser = UserInfo(firstName: firstName, lastName: lastName, gender: gender)
+        modelContext.insert(newUser)
       }
   }
 }
