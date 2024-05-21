@@ -30,8 +30,9 @@ struct UserInfoView: View {
                 Text(gender)
               }
             }
-            Button(action: addItem) {
-              Text("Add User")
+            Button("Add User") {
+              addItem()
+              dismiss()
             }
           }
         }
